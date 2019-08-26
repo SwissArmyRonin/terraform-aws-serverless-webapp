@@ -32,3 +32,8 @@ variable "lambda_runtime" {
   description = "The Lambda runtime"
   default     = "nodejs10.x"
 }
+
+variable "frontend_source_dir" {
+  description = "The absolute path of a folder containing the (transpiled/bundled) front-end"
+  type        = "string"
+}

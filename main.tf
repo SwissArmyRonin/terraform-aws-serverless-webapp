@@ -1,5 +1,7 @@
 /**
  * # Serverless Webapp
+ *
+ * _For Terraform "~> 0.11"_
  * 
  * Please note that creating the certificates can take anywhere from a few minutes to 45 minutes. The
  * wait is determined by how fast AWS approves the certificates. If install fails after 45 minutes due
@@ -204,7 +206,7 @@ resource "null_resource" "deploy_website" {
   count = "${var.deploy_website ? 1 : 0}"
 
   provisioner "local-exec" {
-    command = "aws s3 cp --recursive ../js/build s3://${aws_s3_bucket.front.bucket}/"
+    command = "aws s3 cp --recursive ${var.frontend_source_dir} s3://${aws_s3_bucket.front.bucket}/"
   }
 
   depends_on = ["aws_s3_bucket.front"]

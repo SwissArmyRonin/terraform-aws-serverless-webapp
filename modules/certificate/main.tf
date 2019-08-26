@@ -1,3 +1,9 @@
+/**
+ * # Certificate
+ *
+ * Helper module that creates validated certificates in the current region and certificates
+ * specifically in "us-east-1" for use with CloudFront.
+ */
 provider "aws" {
   alias  = "us-east-1" # The certs used by CloudFront have to be in the us-east-1 region
   region = "us-east-1"

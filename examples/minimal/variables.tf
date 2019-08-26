@@ -1,7 +1,9 @@
 variable "region" {
-  default = "eu-west-1"
+  description = "The AWS target region"
+  default     = "eu-west-1"
 }
 
 variable "zone_name" {
-  default = "isntall.net"
+  description = "The top level domain that will host the subdomains used for the front- and back-end"
+  default     = "isntall.net"
 }
